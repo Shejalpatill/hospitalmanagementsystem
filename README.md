@@ -1,0 +1,2 @@
+# hospitalmanagementsystem
+hospital management deatils
