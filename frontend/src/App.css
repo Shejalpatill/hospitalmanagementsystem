@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css");
+@import url("//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css");
+ /* 81c7e4
+ 9ccb3d
+0e92cc
+https://www.freepik.com/premium-photo/tiny-plant-hand-drawn_154239190.htm#fromView=image_search_similar&page=1&position=51&uuid=326f3279-7505-4f56-a87e-a384830098fb 
+https://www.freepik.com/premium-photo/electrocardiogram-hospital-surgery-operating-emergency-room-showing-patient-heart-rate_7262404.htm#from_view=detail_alsolike*/
+*{
+  margin: 0px; 
+  padding: 0px;
+}
+body {
+  font-family: "Lato", sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.HeaderWrapper {
+  padding: 15px 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Adjusts layout for small screens */
+}
+.fontcolor{
+  font-size: 30px !important;
+  font-weight: 500;
+}
+.Headingcolor{
+  color: #0657a3;
+}
+
+@media (max-width: 377px) {
+  .heading {
+    font-size: 22px !important;
+    margin-left: 56px !important; /* Font size for screens 377px or smaller */
+  }
+}
+@media (max-width: 321px) {
+  .heading {
+    font-size: 22px !important;
+    margin-left: 30px !important; /* Font size for screens 377px or smaller */
+  }
+}
+@media (max-width: 377px) {
+  .heading3 {
+    font-size: 22px !important;
+    margin-left: 74px !important; /* Font size for screens 377px or smaller */
+  }
+}
+@media (max-width: 321px) {
+  .heading3 {
+    font-size: 22px !important;
+    margin-left: 50px !important; /* Font size for screens 377px or smaller */
+  }
+}
+@media (max-width: 377px) {
+  .heading1{
+    font-size: 22px !important;
+    margin-left: 30px !important; /* Font size for screens 377px or smaller */
+  }
+}
+@media (max-width: 321px) {
+  .heading1 {
+    font-size: 20px !important;
+    margin-left: 15px !important; /* Font size for screens 377px or smaller */
+  }
+}
+@media (max-width: 377px) ,{
+  .treatmentbody {
+    text-align: center;
+  }
+}
+@media (max-width: 426px) ,{
+  .treatmentbody {
+    text-align: center;
+  }
+}
+@media (max-width: 321px) {
+  .treatmentbody {
+    text-align: center;
+  }
+}
+
+
+.logoWrapper {
+  flex: 1; 
+  max-width: 18% !important;
+}
+
+.logoWrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.part2 {
+  display: flex;
+  justify-content: center;
+}
+
+.diel {
+  text-align: right !important;
+  background: linear-gradient(45deg, #9ccb3d, #81c7e4, #0e92cc);
+  border-radius: 20px;
+  margin-bottom: 4px;
+}
+.diel:hover {
+  background: linear-gradient(45deg, #81c7e4, #9ccb3d, #0e92cc);
+}
+.diel h6 {
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  padding: 15px 0px;
+}
+/* Navigation styling */
+.nav {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding: 0 20px; /* Adjust padding for space between elements */
+}
+
+.nav .profile-menu {
+  flex: 1; /* Make the profile menu take the available space */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav .hamburger {
+  display: none; /* Hidden by default on larger screens */
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px;
+  position: absolute;
+  padding-bottom: 10px;
+  right: 0px;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+  margin-left: auto; /* Push the hamburger icon to the far right */
+}
+
+/* Menu styling */
+.nav .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hide the menu by default on small screens */
+.nav .menu li {
+  display: inline-block;
+}
+
+.nav .menu li Button {
+  color: #514f4f;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+.nav .menu li:hover Button {
+  border-radius: 30px;
+  border-bottom: 1px solid #7CC5E3;
+}
+
+/* When the menu is open (on small screens), make it a column */
+.nav .menu.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh; /* Make sure it covers full screen height */
+  width: 250px; /* Set the width of the menu */
+  background-color: rgb(255, 255, 255);
+  padding: 35px;
+  transform: translateX(100%); /* Hide the menu off-screen initially */
+  z-index: 9;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Smooth transition for sliding and width */
+  min-height: 100vh; /* Ensure the menu takes the full height of the screen */
+}
+
+/* Slide the menu in when it is open */
+.nav .menu.open.show {
+  transform: translateX(0); /* Slide the menu into view from the right */
+}
+
+/* Rotate hamburger icon when the menu is open */
+.nav .hamburger.open {
+  transform: rotate(90deg); /* Rotate hamburger when the menu is open */
+}
+
+/* Media Query for screens smaller than 1410px */
+/* Media Query for screens smaller than 1410px */
+@media (max-width: 1410px) {
+  .nav {
+    display: flex;
+    justify-content: space-between; /* Align items to the left and right */
+    align-items: center;
+  }
+
+  .nav .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 10px;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Align the hamburger to the right */
+  .nav .hamburger {
+    margin-left: auto; /* Push the hamburger icon to the far right */
+  }
+
+  .nav .menu {
+    display: none; /* Hide menu by default */
+  }
+
+  .nav .menu.open.show {
+    display: flex; /* Show menu when open */
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 35px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 9;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Hide off-screen initially */
+  }
+
+  .nav .menu.open.show {
+    transform: translateX(0); /* Slide the menu into view from the right */
+  }
+}
+
+/* Media Query for larger screens above 1410px */
+@media (min-width: 1410px) {
+  .nav .hamburger {
+    display: none; /* Hide hamburger menu on larger screens */
+  }
+
+  .nav .menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+
+
+/* footerContent */
+.footer {
+  padding: 60px 0px;
+  border-top: 1px solid #adaaaa;
+  background-color: #f7f7f7; 
+}
+.footer .footerContent .logo{
+  flex: 1; 
+  max-width: 25% !important;
+}
+.footer .footerContent .logo img{
+  width: 100%;
+  height: auto;
+}
+.footer .footerContent .quikLinks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer .footerContent .quikLinks h6{
+  font-size: 22px;
+  font-weight: 700;
+  color: #282727;
+}
+.footer .footerContent .quikLinks ul li{
+  list-style: none;
+  font-size: 16px !important;
+  padding-top: 10px;
+}
+.footer .footerContent .quikLinks ul li a{
+  text-decoration: none;
+  font-size: 16px;
+  color: #282727;
+}
+.footer .footerContent .quikLinks ul li:hover a{
+  color: #1976d2;
+  font-weight: 400;
+}
+.footer .footerContent .quikLinks ul{
+  margin-bottom: 0px !important;
+  padding-left: 0px !important;
+}
+.address .contact-item{
+  padding-bottom: 7px;
+}
+.address .contact-item span{
+  font-size: 16px;
+}
+.footer .copyright{
+  flex-direction: column;
+  border-top: 1px solid #adaaaa;
+}
+
+
+/* slider */
+.slider-background {
+  background-color: #d6d1d1;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow for smooth transitions */
+}
+
+.slider-image {
+  height: 100vh; /* Each slide fills the viewport */
+  width: 100%; /* Full width */
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure it sits above the slider */
+  text-align: center;
+}
+
+.overlay-content h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* home */
+.home-page {
+  position: relative;
+  width: 100%;
+  height: auto; /* Full viewport height */
+  background-image: url('./Assests/images/bg_home.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: flex-start; /* Align content to the top */
+  padding-top: 20px; /* Adjust if needed */
+}
+
+.content {
+  color: #282727;
+  text-align: left;
+  z-index: 2;
+  padding-left: 30px; /* Add some space from the left side */
+  padding-top: 20px;  /* Adjust top padding for better alignment */
+  width: 100%; /* Ensure it takes the full width */
+  max-width: 400px; /* Limit the width of the text block */
+}
+
+
+.headline {
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid black;
+  padding-top: 35px;
+}
+
+.subtext-1 {
+  padding-top:30px;
+  font-size: 2.5rem !important;
+  word-spacing: 0px !important;
+  line-height: 55px !important;
+}
+.subtext-2{
+  font-size: 1.3rem !important;
+  padding-top: 10px;
+  padding-bottom: 10rem;
+}
+.subtext-2 b{
+  font-size: 30px !important;
+  word-spacing: 3px;
+}
+
+.homeForm .appoinmentForm{
+  position: absolute;
+  top: 50%;
+}
+@media (max-width: 1030px) {
+  .appointmentForm {
+    position: absolute;
+    top: 300%; /* Adjusted for smaller screens below 1030px */
+    width: 90%; /* Example: Change width for smaller screens */
+    padding: 20px; /* Add padding for better spacing */
+  }
+}
+.rateValue{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.rating{
+  border-right: 1px solid black;
+}
+
+.bookform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.bookform  .appoinmentForm {
+  max-width: 900px;
+  width: 100%;
+}
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.no-results {
+  text-align: center;
+  color: gray;
+  margin-top: 20px;
+}
+
